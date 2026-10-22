@@ -1,13 +1,14 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#faf6f4">
 <title>The Hair Alchemist | Wigs & Wig Services in Accra</title>
 <meta name="description" content="Quality wigs and wig services — revamping, installation, plucking, straightening, curling and crimping. Madina Rawlings Circle & Amasaman.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500&display=swap">
 <style>
-:root{--bg:#faf6f4;--ink:#1c1318;--wine:#5e1a35;--gold:#b08d57;--soft:#efe5e2;--line:rgba(28,19,24,.16);--surf:#fff}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#150d11;--ink:#f6ece8;--wine:#d98aa8;--gold:#cfa970;--soft:#221519;--line:rgba(246,236,232,.18);--surf:#1d1217}}
+:root{color-scheme:only light;--bg:#faf6f4;--ink:#1c1318;--wine:#5e1a35;--gold:#b08d57;--soft:#efe5e2;--line:rgba(28,19,24,.16);--surf:#fff}
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html{scroll-padding-top:80px;scroll-behavior:smooth}
+html{scroll-padding-top:80px;scroll-behavior:smooth;background:#faf6f4}
 *,*::before,*::after{box-sizing:inherit}
 [hidden]{display:none!important}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Jost,system-ui,sans-serif;overflow-x:hidden}
@@ -15,21 +16,22 @@ h1,h2,h3{font-family:Italiana,Georgia,serif;font-weight:400;line-height:1.05;mar
 a{color:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(250,246,244,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--bg)}
-nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:10px}
 .logo{height:58px;width:auto;max-width:150px;object-fit:contain;background:#fff;border-radius:4px;display:block}
 nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
 nav ul a{text-decoration:none;font-size:15px;letter-spacing:.04em;position:relative}
 nav ul a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:var(--gold);transition:width .3s}
 nav ul a:hover::after{width:100%}
+.nav-end{display:flex;align-items:center;gap:10px}
 .account-btn{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;color:var(--ink);text-decoration:none;transition:background .2s,color .2s}
 .account-btn:hover{background:var(--wine);color:#fff}
 .account-btn svg{width:20px;height:20px}
-.btn{display:inline-block;padding:13px 26px;border-radius:999px;background:var(--wine);color:#fff;text-decoration:none;font-weight:500;border:1px solid var(--wine);transition:transform .25s,background .25s}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;background:var(--wine);color:#fff;text-decoration:none;font-weight:500;border:1px solid var(--wine);transition:transform .25s,background .25s;font-family:inherit;font-size:inherit;cursor:pointer}
 .btn:hover{transform:translateY(-2px)}
 .btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
-@media(max-width:760px){nav ul{display:none}}
+@media(max-width:760px){nav ul{display:none}.btn{padding:12px 20px}}
 .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:56px 0 72px}
 .hero h1{font-size:clamp(46px,7vw,92px)}
 .hero h1 span{display:block;overflow:hidden}
@@ -101,8 +103,10 @@ footer{border-top:1px solid var(--line);padding:30px 0;font-size:15px;opacity:.8
 <header><div class="wrap"><nav>
 <a href="#top" aria-label="The Hair Alchemist home"><img class="logo" src="Assets/Hair Alchemist logo.jpg" alt="The Hair Alchemist"></a>
 <ul><li><a href="#wigs">Wigs</a></li><li><a href="#services">Services</a></li><li><a href="#visit">Visit us</a></li></ul>
+<div class="nav-end">
 <a class="account-btn" href="#owner" aria-label="Owner account sign in" title="Owner account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></a>
-<a class="btn" href="tel:0552734835">Call now</a></nav></div></header>
+<a class="btn" href="tel:0552734835">Call now</a>
+</div></nav></div></header>
 
 <main id="top">
 <div class="wrap hero">
@@ -157,6 +161,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;font-size:15px;opacity:.8
 <div class="card rv"><h3>Call us</h3><a class="big" href="tel:0552734835">055 273 4835</a>
 <h3>Find us</h3><p>Madina, Rawlings Circle</p><p>Amasaman</p></div>
 </div></section>
+
 <section id="owner" class="admin" hidden><div class="wrap">
 <h2>Owner dashboard</h2>
 <p class="lead">Sign in with the owner email to manage product names, prices and images.</p>
