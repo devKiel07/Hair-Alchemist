@@ -80,6 +80,9 @@ figcaption a{justify-self:start;font-size:14px;background:var(--wine);color:#fff
 .admin-product{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 16px;background:var(--surf);border:1px solid var(--line);border-radius:10px}
 .admin-product button,.admin-secondary{font:inherit;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);cursor:pointer}
 .admin-status{min-height:1.5em;margin:10px 0}
+.admin-product .btns{display:flex;gap:8px;flex-shrink:0}
+.admin-product button.danger{color:#a02323;border-color:#a02323}
+.admin-product button:disabled{opacity:.5;cursor:wait}
 .svc{background:var(--soft)}
 .menu{max-width:760px}
 .row{display:flex;align-items:baseline;gap:14px;padding:20px 0;border-bottom:1px solid var(--line);transition:padding .3s}
@@ -352,8 +355,39 @@ document.getElementById('product-categories').value=(product.categories||[]).joi
 document.getElementById('product-image').value='';
 productForm.scrollIntoView({block:'center',behavior:'smooth'});
 });
-row.append(edit);
+const del=document.createElement('button');
+del.type='button';
+del.className='danger';
+del.textContent='Delete';
+del.addEventListener('click',()=>deleteProduct(product,del));
+const actions=document.createElement('div');
+actions.className='btns';
+actions.append(edit,del);
+row.append(actions);
 productList.append(row);
+}
+}
+
+async function deleteProduct(product,button){
+if(!confirm('Delete "'+product.name+'"? This cannot be undone.'))return;
+button.disabled=true;
+try{
+const {data,error}=await supabase.from('products').delete().eq('id',product.id).select('id');
+if(error)throw error;
+if(!data||!data.length)throw new Error('Nothing was deleted. Run the delete SQL in Supabase first.');
+const marker='/product-images/';
+const at=product.image_url.indexOf(marker);
+if(at!==-1){
+const path=decodeURIComponent(product.image_url.slice(at+marker.length).split('?')[0]);
+const {error:removeError}=await supabase.storage.from('product-images').remove([path]);
+if(removeError)console.error('Could not remove the image file',removeError);
+}
+if(activeProduct&&activeProduct.id===product.id)resetProductForm();
+await loadProducts();
+setStatus('"'+product.name+'" was deleted.');
+}catch(error){
+button.disabled=false;
+showError(error,'Could not delete product');
 }
 }
 
